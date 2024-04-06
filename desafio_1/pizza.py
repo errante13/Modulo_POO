@@ -1,78 +1,83 @@
+import ingredientes
 class Pizza:
     
     # lista ingredientes
     lista_vegetales = ["tomate", "aceitunas", "champiñones"]
     masa = ["delgada", "gruesa"]
     lista_proteina = ["pollo", "vacuno", "carne vegetal"]
-  
-   #ATRIBUTOS PIZZA
     
-    
+    #ATRIBUTOS PIZZA
+    ingredientes =[]
+    precio = 10000
+    tamanio = "familiar"
+   
+      
     # METODO DE VALIDACION
     @staticmethod
     def validar(eleccion, opciones):
-        if eleccion not in opciones:
-            return False
-        return True
+        if eleccion in opciones:
+            return True
+        return False
 
-    def hacerPedido():
+    def hacerPedido(self):
         validos =[]
-        ingredientes =[]
-        
+                
         # ingrediente proteico
-        proteina = input(f"favor ingresar un ingrediente de la lista {Pizza.lista_proteina} \n").lower()
+        proteina = input(f"favor ingresar un ingrediente de la lista {ingredientes.lista_proteina} \n").lower()
         # print(proteina) (linea para probar codigo)
         # validamos que corresponda la opción corresponda
         
-        if Pizza.validar(proteina, Pizza.lista_proteina):
-            ingredientes.append(proteina)
+        if  self.validar(proteina, ingredientes.lista_proteina):
+            self.ingredientes.append(proteina)
             validos.append(True)
             # print(validos) // pruebas de codigo
-            print("ingrediente agregado")
+            print("ingrediente agregado\n")
             # print(self.validar) //pruebas de codigo
         else:
             # print(self.validar) //pruebas de codigo
             validos.append(False)
-            print("ingrediente no valido  ")
+            print("ingrediente no valido\n")
 
         # se agrega primer Ingrediente vegetal
-        vegetal_uno = input(f"favor ingresar un ingrediente de la lista {Pizza.lista_vegetales}").lower()
+        vegetal_uno = input(f"favor ingresar un ingrediente de la lista {ingredientes.lista_vegetales}\n").lower()
         # validamos que corresponda la opción corresponda
-        if Pizza.validar(vegetal_uno, Pizza.lista_vegetales):
-            ingredientes.append(vegetal_uno)
-            validos.append(True)
-            print("ingrediente agregado")
+        if self.validar(vegetal_uno, ingredientes.lista_vegetales):
+           self.ingredientes.append(vegetal_uno)
+           validos.append(True)
+           print("ingrediente agregado\n")
         else:
-            print("ingrediente no valido  ")
+            print("ingrediente no valido\n")
             validos.append(False)
 
         # se agrega segundo Ingrediente vegetal
-        vegetal_dos = input(f"favor ingresar un ingrediente de la lista {Pizza.lista_vegetales}").lower()
+        vegetal_dos = input(f"favor ingresar un ingrediente de la lista {ingredientes.lista_vegetales}\n").lower()
         # validamos que corresponda la opción corresponda
-        if Pizza.validar(vegetal_dos, Pizza.lista_vegetales):
-            ingredientes.append(vegetal_dos)
+        if self.validar(vegetal_dos, ingredientes.lista_vegetales):
+            self.ingredientes.append(vegetal_dos)
             validos.append(True)
-            print("ingrediente agregado")
+            print("ingrediente agregado\n")
         else:
             validos.append(False)
-            print("ingrediente no valido ")
+            print("ingrediente no valido\n")
 
         # se agrega MASA
-        masa = input(f"favor ingresar una masa de la lista {Pizza.masa}").lower()
+        masa = input(f"favor ingresar una masa de la lista {ingredientes.masa}\n").lower()
         # validamos que corresponda la opción corresponda
-        if Pizza.validar(masa, Pizza.masa):
-            ingredientes.append(masa)
+        if self.validar(masa, ingredientes.masa):
+            self.ingredientes.append(masa)
             validos.append(True)
-            print("ingrediente agregado")
+            print("ingrediente agregado\n")
         else:
             validos.append(False)
-            print("ingrediente no valido ")
-
+            print("ingrediente no valido\n")
+        
+        #----- VALIDACIÓN DE LA PIZZA CORRECTA ---
+         
         if False not in validos:
-            print(f"los ingredientes de la pizza son: {ingredientes}\n")
+            print(f"el pedido es válido, \n los ingredientes de la pizza son: {self.ingredientes}\n")
             #return ingredientes
         else:
             print("el pedido no es válido ")
-            return ingredientes
-
+            return self.ingredientes
+        
 # pz.hacerPedido()
