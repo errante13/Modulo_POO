@@ -20,7 +20,7 @@ class Pizza:
         return False
 
     def hacerPedido(self):
-        validos =[]
+        validos=[]
                 
         # ingrediente proteico
         proteina = input(f"favor ingresar un ingrediente de la lista {ingredientes.lista_proteina} \n").lower()
@@ -78,6 +78,6 @@ class Pizza:
             #return ingredientes
         else:
             print("el pedido no es válido ")
-            return self.ingredientes
+            #return self.ingredientes
         
 # pz.hacerPedido()
