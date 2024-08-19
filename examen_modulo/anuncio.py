@@ -84,7 +84,7 @@ class Anuncio():
             else:
                 self.__sub_tipo = sub_tipo
         except SubTipoInvalidoError as stie:
-            print(f"Error:: {stie.mensaje}",stie.subtipo)            
+            print(f"Error::") #{stie.mensaje",stie.subtipo)            
     
     
 ###### CLASE VIDEO ########      

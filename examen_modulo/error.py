@@ -8,6 +8,7 @@ class LargoExcedidoError(Error):
 
 
 class SubTipoInvalidoError(Error):
-    def __init__(self, mensaje, subtipo):
-        self.mensaje = mensaje
-        self.subtipo = subtipo
+    pass
+    # def __init__(self, mensaje, subtipo):
+    #     self.mensaje = mensaje
+    #     self.subtipo = subtipo
